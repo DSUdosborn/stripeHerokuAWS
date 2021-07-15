@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Naturistic - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/favacon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+
+  <body>
+    <div id="app">
+        <nav>
+          <div id="logo">
+            <img src="../images/naturstic.png" alt="" height="35px">
+          </div>
+          <ul>
+            <a><li>Home</li></a>
+            <a><li>Collection</li></a>
+            <a><li>About</li></a>
+            <img src="../images/cart-alt.svg" alt="" height="25px">
+          </ul>
+        </nav>
+        <v-card
+            max-width= "800"
+            id="developers"
+            elvation="14"
+            class="mx-auto"
+
+            >
+            <v-card-title p="3" class="text-h1">The Developers</v-card-title>
+            <v-spacer></v-spacer>
+            <v-container>
+            <v-row dense>
+                <v-col cols="12">
+            <v-card
+            p="7"
+            color="#006064"
+            >
+                <v-card-title class="white" class="text-h3" >Daniel Urias</v-card-title>
+                <div class="profile-section">
+                    <v-card-subtitle class="white" class="about-developer">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                    </v-card-subtitle>
+                    <v-card-subtitle><v-img contain src="../images/sun_mountain.jpg" width="300"></v-img></v-card-subtitle>
+
+                </div>
+                </v-card>
+            </v-col>
+            <v-spacer></v-spacer>
+            <v-col cols="12">
+            <v-card
+            p="7"
+            color="#006064">
+
+                <v-card-title class="white" class="text-h3">Kalicia Adams</v-card-title>
+                <div class="profile-section">
+                    <v-card-subtitle> <v-img contain src="../images/kalicia.jpg" width="300"></v-img></v-card-subtitle>
+                    <v-card-subtitle class="white" class="about-developer">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                     Ut enim ad minim veniam, quis nostrud exercitation
+                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <v-spacer></v-spacer>
+                        <br>
+                        <v-btn raised elevation="5"><a href="https://www.linkedin.com/in/kalicia-adams-2b489a207" class="link" target="_blank">LinkedIn</a></v-btn>
+                    </v-card-subtitle>
+
+                </div>
+              </v-card>
+            </v-col>
+
+            <v-col col="12">
+            <v-card
+            p="7"
+            color="#006064"
+
+            >
+                <v-card-title class="white" class="name">Doug Osborn</v-card-title>
+                <div class="profile-section">
+                <v-card-subtitle class="white" class="about-developer">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                     Ut enim ad minim veniam, quis nostrud exercitation
+                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                     Duis aute irure dolor in reprehenderit in voluptate velit
+                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                     occaecat cupidatat non proident, sunt in culpa qui officia
+                     deserunt mollit anim id est laborum.</v-card-subtitle>
+                     <v-card-subtitle><v-img contain src="../images/lake.jpg" width="300"></v-img></v-card-subtitle>
+                </div>
+            </v-card>
+        </v-col>
+    </v-row>
+    </v-container>
+    </v-card>
+    <v-footer>
+
+
+    </v-footer>
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="app.js"></script>
+</html>
