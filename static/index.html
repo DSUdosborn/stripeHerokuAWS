@@ -24,8 +24,33 @@
           </div>
           <ul>
             <a><li>Home</li></a>
-            <a><li>Collection</li></a>
-            <a><li> <div id="about" @click="goToAbout()"></div>About</li></a>
+            <a><li>
+              <v-menu offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    color="primary"
+                    dark
+                    v-bind="attrs"
+                    v-on="on"
+                    >
+                    Collections
+                  </v-btn>
+                </template>
+              <v-list>
+                <v-list-item
+                v-for="(category, index) in categoryList"
+                :key="index"
+                >
+                <v-list-item-title>{{ category.title }}</v-list-item-title>
+              </v-list-item>
+              </v-list>
+              </v-menu>
+            </li></a>
+
+            <a><li>
+              About
+            </li></a>
+
             <img src="../images/cart-alt.svg" alt="" height="25px">
           </ul>
         </nav>
