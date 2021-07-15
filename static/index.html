@@ -4,48 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Stripe Checkout Sample</title>
-
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/global.css" />
+    <title>Naturistic - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/favacon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="./index.js" defer></script>
   </head>
 
   <body>
-    <div class="sr-root">
-      <div class="sr-main">
-        <section class="container">
-          <div>
-            <h1>Single photo</h1>
-            <h4>Purchase a Pasha original photo</h4>
-
-            <div class="pasha-image">
-              <img
-                src="https://picsum.photos/280/320?random=4"
-                width="140"
-                height="160"
-              />
+    <div id="app">
+        <nav>
+          <div id="logo">
+            <img src="../images/naturstic.png" alt="" height="35px">
+          </div>
+          <ul>
+            <a><li>Home</li></a>
+            <a><li>Collection</li></a>
+            <a><li>About</li></a>
+            <img src="../images/cart-alt.svg" alt="" height="25px">
+          </ul>
+        </nav>
+        <div id="hero-section">
+          <p class="body-text">The internet’s source of high-resolution images.<br>
+            Powered by creators everywhere</p>
+          <div class="search-bar">
+            <div class="search-icon">
+              <img src="../images/search-1.svg" alt="" height="15px">
             </div>
+            <input type="text" placeholder="Search high-resolution photos">
           </div>
 
-          <form action="/create-checkout-session" method="POST">
-            <div class="quantity-setter">
-              <button class="increment-btn" id="subtract" disabled type="button">-</button>
-              <input type="number" id="quantity-input" min="1" value="1" name="quantity" />
-              <button class="increment-btn" id="add" type="button">+</button>
-            </div>
+        </div>
 
-            <p class="sr-legal-text">Number of copies (max 10)</p>
-
-            <button type="submit" id="submit">Buy</button>
-          </form>
-        </section>
-
-        <div id="error-message"></div>
-      </div>
     </div>
-  </body>
-</html>
 
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="app.js"></script>
+</html>
