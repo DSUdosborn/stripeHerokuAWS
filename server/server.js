@@ -48,6 +48,32 @@ app.get('/config', async (req, res) => {
   });
 });
 
+app.get("/products", (req, res) => {
+
+  console.log("getting all products");
+  const stripe = require('stripe')('sk_test_51JCTAaHxgK3tLKrKivrOPYplk4h5U1uzMBy1CcISIrjTD1001vQSNlTB9nEfQ4FTN50rj54QKRBpX41SWw6yVL1S00fn4z86UY');
+
+  const products = await stripe.products.list({
+    limit: 15,
+  });
+
+  
+  Products.find({}, (err, products) => {
+    // check if error is null
+    if (err != null) {
+      res.status(500).json({
+        error: err,
+        message: "could not list products",
+      });
+      return;
+    }
+    res.status(200).json(products);
+  });
+});
+
+
+
+
 // Fetch the Checkout Session to display the JSON result on the success page
 app.get('/checkout-session', async (req, res) => {
   const { sessionId } = req.query;
