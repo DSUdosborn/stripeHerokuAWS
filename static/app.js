@@ -2,6 +2,16 @@ var app = new Vue({
     el: "#app",
     data: {
         search_string:"",
+        showCategoryMenu: false,
+        categoryList: [
+          { title: 'Water' },
+          { title: 'Mountains' },
+          { title: 'Space' },
+          { title: 'Trees' },
+          { title: 'Desert' },
+          { title: 'Flowers' },
+          { title: 'Sunsets' },
+        ],
         products: [
             {
                 "title":"Single Desert Mountain",
