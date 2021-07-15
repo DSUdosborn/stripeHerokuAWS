@@ -3,7 +3,7 @@ const app = express();
 const { resolve } = require('path');
 // Copy the .env.example in the root into a .env file in this folder
 require('dotenv').config({ path: './.env' });
-
+ 
 // Ensure environment variables are set.
 checkEnv();
 
@@ -18,7 +18,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
 
 
 app.use(express.static(process.env.STATIC_DIR));
-app.use(express.urlencoded({extended : false}));
+//app.use(express.urlencoded({extended : false}));
 app.use(
   express.json({
     // We need the raw body to verify webhook signatures.
