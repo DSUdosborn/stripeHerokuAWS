@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+}
+
+nav {
+    display: grid;
+    grid-column: 1/4;
+    grid-template-columns: 1fr 200px 600px 1fr;
+    height: 60px;
+}
+
+nav ul {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    font-size: 16px;
+    padding-left: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul img {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+}
+
+/* Hero */
+
+#hero-section {
+    background-image: url("../images/desert_mountains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.body-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column-start: 2;
+    font-size: 18px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.search-bar {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input {
+    background-color: white;
+    height: 40px;
+    width: 500px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+
+/* About */
+
+#developers {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.about-developer {
+    padding: 20px;
+    margin: 0px;
+
+}
+
+
+.name {
+    padding-left: 20px;
+}
+.white {
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
