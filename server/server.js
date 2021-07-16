@@ -53,10 +53,12 @@ app.get('/products', async (req, res) => {
   console.log("getting all products");
 
   const products = await stripe.products.list({
-  limit: 15,
+
 });
 
- console.log(products);
+ console.log(products.data);
+
+ res.status(200).json(products.data)
 //  res.send({
 
 //  });
