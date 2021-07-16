@@ -1,5 +1,6 @@
 var app = new Vue({
     el: "#app",
+    vuetify: new Vuetify(),
     data: {
         search_string:"",
         showCategoryMenu: false,
@@ -12,27 +13,8 @@ var app = new Vue({
           { title: 'Flowers' },
           { title: 'Sunsets' },
         ],
-        products: [
-            {
-                "title":"Single Desert Mountain",
-                "url":"",
-                "image":"../images/desert_mountain.jpg",
-                "description":"Desert Mountain"
-            },
-            {
-                "title":"California Waves",
-                "url":"",
-                "image":"../images/wave.jpg",
-                "descriptioin":"Ocean Waves in California USA"
-            }
-        ]
+        products: []
 
-    },
-
-    vuetify: new Vuetify(),
-
-    created:function(){
-      this.getProducts();
     },
 
     methods:{
@@ -45,6 +27,10 @@ var app = new Vue({
           });
 
         },
+    },
+
+    created:function(){
+      this.getProducts();
     },
 
     computed: {
