@@ -56,9 +56,10 @@ app.get('/products', async (req, res) => {
   limit: 15,
 });
 
-  res.send({
+ console.log(products);
+//  res.send({
 
-  });
+//  });
 });
 
 
