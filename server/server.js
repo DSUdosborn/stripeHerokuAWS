@@ -12,7 +12,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   appInfo: { // For sample support and debugging, not required for production:
     name: "naturistic e-store demo",
     version: "0.0.1",
-    url: "https://github.com/naturistic/herokuStripe"
+    url: "https://Naturistic.github.io"
   }
 });
 
@@ -45,6 +45,19 @@ app.get('/config', async (req, res) => {
     publicKey: process.env.STRIPE_PUBLISHABLE_KEY,
     unitAmount: price.unit_amount,
     currency: price.currency,
+  });
+});
+
+app.get('/products', async (req, res) => {
+
+  console.log("getting all products");
+
+  const products = await stripe.products.list({
+  limit: 15,
+});
+
+  res.send({
+
   });
 });
 
