@@ -4,8 +4,6 @@ const { resolve } = require('path');
 // Copy the .env.example in the root into a .env file in this folder
 require('dotenv').config({ path: './.env' });
 
-// Ensure environment variables are set.
-checkEnv();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
@@ -54,7 +52,7 @@ app.get('/products', async (req, res) => {
 
   const products = await stripe.products.list({
 
-});
+  });
 
  console.log(products.data);
 
@@ -82,7 +80,7 @@ app.post('/create-checkout-session', async (req, res) => {
   // The list of supported payment method types. We fetch this from the
   // environment variables in this sample. In practice, users often hard code a
   // list of strings for the payment method types they plan to support.
-  const pmTypes = (process.env.PAYMENT_METHOD_TYPES || 'card').split(',').map((m) => m.trim());
+  const pmTypes = ('card').split(',').map((m) => m.trim());
 
   // Create new Checkout Session for the order
   // Other optional params include:
@@ -145,12 +143,3 @@ app.post('/webhook', async (req, res) => {
 });
 
 app.listen(4242, () => console.log(`Node server listening on port ${4242}!`));
-
-
-function checkEnv() {
-  const price = process.env.PRICE;
-  if(price === "price_12345" || !price) {
-    console.log("You must set a Price ID in the environment variables. Please see the README.");
-    process.exit(0);
-  }
-}
