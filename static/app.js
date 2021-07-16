@@ -25,9 +25,6 @@ var app = new Vue({
 
     },
 
-    created:function(){
-      this.getProducts();
-    },
 
     computed: {
         filteredProducts: function(){
