@@ -48,28 +48,6 @@ app.get('/config', async (req, res) => {
   });
 });
 
-app.get("/products", (req, res) => {
-
-  console.log("getting all products");
-
-  const products = stripe.products.list({
-    limit: 15,
-  });
-
-
-  Products.find({}, (err, products) => {
-    // check if error is null
-    if (err != null) {
-      res.status(500).json({
-        error: err,
-        message: "could not list products",
-      });
-      return;
-    }
-    res.status(200).json(products);
-  });
-});
-
 
 
 

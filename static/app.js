@@ -28,7 +28,25 @@ var app = new Vue({
         ]
 
     },
+
     vuetify: new Vuetify(),
+
+    created:function(){
+      this.getProducts();
+    },
+
+    methods:{
+        getProductss:function(){
+          
+            console.log("getting all products");
+
+            const products = stripe.products.list({
+            limit: 15,
+          });
+
+        },
+    },
+
     computed: {
         filteredProducts: function(){
             var product_array = this.products;
