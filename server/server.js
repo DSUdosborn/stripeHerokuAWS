@@ -52,7 +52,7 @@ app.get("/products", (req, res) => {
 
   console.log("getting all products");
 
-  const products = await stripe.products.list({
+  const products = stripe.products.list({
     limit: 15,
   });
 
