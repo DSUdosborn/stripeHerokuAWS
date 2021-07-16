@@ -20,7 +20,7 @@ var app = new Vue({
     },
 
     methods:{
-        getProducts:function(){
+        getProducts: async function(){
 
             console.log("getting all products");
 
