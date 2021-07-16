@@ -20,15 +20,7 @@ var app = new Vue({
     },
 
     methods:{
-        getProducts: async function(){
 
-            console.log("getting all products");
-            const stripe = createStripeConnection("rk_test_72wdhn7pifTOWbrtrSNFxhsQ00NrdzPvaC");
-            const products = await stripe.products.list({
-            limit: 15,
-          });
-
-        },
 
         createStripeConnection: function(stripe_api_key){
           const Stripe = require("stripe");
@@ -42,6 +34,17 @@ var app = new Vue({
           stripe.setMaxNetworkRetries(3); //retry on network failure
           return stripe;
         },
+        
+        getProducts: async function(){
+
+            console.log("getting all products");
+            const stripe = createStripeConnection("rk_test_72wdhn7pifTOWbrtrSNFxhsQ00NrdzPvaC");
+            const products = await stripe.products.list({
+            limit: 15,
+          });
+
+        },
+
     },
 
     created:function(){
