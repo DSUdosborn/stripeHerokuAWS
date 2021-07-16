@@ -36,8 +36,8 @@ var app = new Vue({
     },
 
     methods:{
-        getProductss:function(){
-          
+        getProducts:function(){
+
             console.log("getting all products");
 
             const products = stripe.products.list({
