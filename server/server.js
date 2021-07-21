@@ -55,7 +55,7 @@ app.get('/products', async (req, res) => {
 
     console.log(products.data);
 
-    res.status(200).json(products.data)
+    res.status(200).json(products.data.id)
 
   } catch (error) {
 
