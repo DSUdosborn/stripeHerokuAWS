@@ -49,16 +49,39 @@ app.get('/products', async (req, res) => {
 
   console.log("getting all products");
 
-  const products = await stripe.products.list({
+  try {
 
-  });
+    const products = await stripe.products.list({});
 
- console.log(products.data);
+    console.log(products.data);
 
- res.status(200).json(products.data)
-//  res.send({
+    res.status(200).json(products.data)
 
-//  });
+  } catch (error) {
+
+    return res.status(400).send({Error: error.raw.message, });
+
+  }
+  
+});
+
+// Get List of all saved card of the customers
+app.get("/prices", async (req, res) => {
+
+  let stripePrices = [];
+  console.log("getting all prices");
+
+  try {
+
+    const stripePrices = await stripe.prices.list({ });
+
+    res.status(200).json(stripePrices.data)
+
+  } catch (error) {
+    return res.status(400).send({
+      Error: error.raw.message,
+    });
+  }
 });
 
 
