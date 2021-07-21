@@ -62,7 +62,7 @@ app.get('/products', async (req, res) => {
     return res.status(400).send({Error: error.raw.message, });
 
   }
-  
+
 });
 
 // Get List of all saved card of the customers
@@ -73,7 +73,7 @@ app.get("/prices", async (req, res) => {
 
   try {
 
-    const stripePrices = await stripe.prices.list({ });
+    const stripePrices = await stripe.prices.list({   limit: 100,  });
 
     res.status(200).json(stripePrices.data)
 
