@@ -14,8 +14,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   }
 });
 
-const cors = require("cors");
-app.use(cors());
+
 
 app.use(express.static(process.env.STATIC_DIR));
 //  app.use(express.urlencoded({extended : false}));
