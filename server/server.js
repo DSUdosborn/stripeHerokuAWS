@@ -76,13 +76,14 @@ app.get("/prices", async (req, res) => {
     const stripePrices = await stripe.prices.list({  expand: ['data.product'], limit: 99, });
 
     stripePrices.forEach( (price) => {
-      let obj = {
-        priceId: price.data.id,
-//        currency: price.currency,
-//        amount: price.unit_amount_decimal,
-//        product: price.product.id,
-      };
-      productPrices.push(obj);
+      console.log(price.id);
+  //      let obj = {
+  //        priceId: price.data.id,
+  //        currency: price.currency,
+  //        amount: price.unit_amount_decimal,
+  //        product: price.product.id,
+  //      };
+  //      productPrices.push(obj);
     });
 
     res.status(200).json(productPrices)
