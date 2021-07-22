@@ -77,7 +77,7 @@ app.get("/prices", async (req, res) => {
 
     stripePrices.forEach( (price) => {
       let obj = {
-        priceId: this.id,
+        priceId: price.data.id,
 //        currency: price.currency,
 //        amount: price.unit_amount_decimal,
 //        product: price.product.id,
