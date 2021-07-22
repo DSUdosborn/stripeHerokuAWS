@@ -79,13 +79,12 @@ app.get("/prices", async (req, res) => {
     const prodObjs = Object.values(stripePrices.data);
 
     prodObjs.forEach( (price) => {
-      console.log('another price');
 
         let obj = {
           priceId: price.id,
-  //        currency: price.currency,
-  //        amount: price.unit_amount_decimal,
-  //        product: price.product.id,
+          currency: price.currency,
+          amount: price.unit_amount_decimal,
+          product: price.product.id,
        };
         productPrices.push(obj);
     });
