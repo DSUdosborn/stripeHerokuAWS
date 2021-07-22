@@ -80,7 +80,7 @@ app.get("/prices", async (req, res) => {
         priceId: price.id,
         currency: price.currency,
         amount: price.unit_amount_decimal,
-        product: price.product.id,
+//        product: price.product.id,
       };
       productPrices.push(obj);
     });
