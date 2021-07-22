@@ -78,8 +78,8 @@ app.get("/prices", async (req, res) => {
 
     const prodObjs = Object.values(stripePrices.data);
 
-  // stripePrices.forEach( (price) => {
-  //    console.log('another price');
+    prodObjs.forEach( (price) => {
+      console.log('another price');
   //    counter = counter + 1;
   //      let obj = {
   //        count: counter;
@@ -89,7 +89,7 @@ app.get("/prices", async (req, res) => {
   //        product: price.product.id,
   //      };
   //      productPrices.push(obj);
-  //  });
+    });
 
     res.status(200).json(prodObjs)
 
