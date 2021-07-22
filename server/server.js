@@ -97,9 +97,9 @@ app.get("/prices", async (req, res) => {
 
     });
 
-    console.log(productPrices);
+//    console.log(productPrices);
 
-    res.status(200).json(prodObjs)
+    res.status(200).json(productPrices)
 
   } catch (error) {
     return res.status(400).send({
