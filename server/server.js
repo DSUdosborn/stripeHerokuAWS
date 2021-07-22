@@ -91,7 +91,7 @@ app.get("/prices", async (req, res) => {
           bigImage: price.product.metadata.bigURL,
           image: price.product.metadata.tags,
        };
-       if(obj.smallImage) {
+       if(obj.image) {
          productPrices.push(obj);
        }
 
