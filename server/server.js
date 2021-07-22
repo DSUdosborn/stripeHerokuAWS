@@ -86,7 +86,7 @@ app.get("/prices", async (req, res) => {
           amount: price.unit_amount_decimal,
           product: price.product.id,
           name: price.product.name,
-          description: price.product.decription,
+          description: price.product.description,
           smallImage: price.product.images[0],
 
        };
