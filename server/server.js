@@ -88,7 +88,8 @@ app.get("/prices", async (req, res) => {
           name: price.product.name,
           description: price.product.description,
           smallImage: price.product.images[0],
-
+          bigImage: price.product.metadata.bigURL,
+          imageTags: price.product.metadata.tags,
        };
         productPrices.push(obj);
     });
