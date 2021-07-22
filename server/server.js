@@ -53,9 +53,9 @@ app.get('/products', async (req, res) => {
 
     const products = await stripe.products.list({ limit: 99, });
 
-    console.log(products.data);
+    //console.log(products.data);
 
-    res.status(200).json(products.data.id)
+    res.status(200).json(products)
 
   } catch (error) {
 
@@ -69,27 +69,29 @@ app.get('/products', async (req, res) => {
 app.get("/prices", async (req, res) => {
 
   let productPrices = [];
-  counter = 0;
+
   console.log("getting all prices");
 
   try {
 
     const stripePrices = await stripe.prices.list({  expand: ['data.product'], limit: 99, });
 
-   stripePrices.forEach( (price) => {
-      console.log('another price');
-      counter = counter + 1;
-        let obj = {
-          count: counter;
+    const prodObjs = Object.values(stripePrices.data);
+
+  // stripePrices.forEach( (price) => {
+  //    console.log('another price');
+  //    counter = counter + 1;
+  //      let obj = {
+  //        count: counter;
   //        priceId: price.data.id,
   //        currency: price.currency,
   //        amount: price.unit_amount_decimal,
   //        product: price.product.id,
-        };
-        productPrices.push(obj);
-    });
+  //      };
+  //      productPrices.push(obj);
+  //  });
 
-    res.status(200).json(stripePrices)
+    res.status(200).json(prodObjs)
 
   } catch (error) {
     return res.status(400).send({
