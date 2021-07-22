@@ -85,6 +85,7 @@ app.get("/prices", async (req, res) => {
           currency: price.currency,
           amount: price.unit_amount_decimal,
           product: price.product.id,
+          name: price.product.name,
        };
         productPrices.push(obj);
     });
