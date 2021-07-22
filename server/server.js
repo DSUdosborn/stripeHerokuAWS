@@ -80,16 +80,17 @@ app.get("/prices", async (req, res) => {
 
     prodObjs.forEach( (price) => {
       console.log('another price');
-  //    counter = counter + 1;
-  //      let obj = {
-  //        count: counter;
-  //        priceId: price.data.id,
+
+        let obj = {
+          priceId: price.id,
   //        currency: price.currency,
   //        amount: price.unit_amount_decimal,
   //        product: price.product.id,
-  //      };
-  //      productPrices.push(obj);
+       };
+        productPrices.push(obj);
     });
+
+    console.log(productPrices);
 
     res.status(200).json(prodObjs)
 
