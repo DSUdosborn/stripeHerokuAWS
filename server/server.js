@@ -68,14 +68,24 @@ app.get('/products', async (req, res) => {
 // Get List of all saved card of the customers
 app.get("/prices", async (req, res) => {
 
-  let stripePrices = [];
+  let productPrices = [];
   console.log("getting all prices");
 
   try {
 
     const stripePrices = await stripe.prices.list({  expand: ['data.product'], limit: 99, });
 
-    res.status(200).json(stripePrices.data)
+    stripePrices.forEach( (price) => {
+      let obj = {
+        priceId: price.id,
+        currency: price.currency,
+        amount: price.unit_amount_decimal,
+        product: price.product.id,
+      };
+      productPrices.push(obj);
+    });
+
+    res.status(200).json(productPrices)
 
   } catch (error) {
     return res.status(400).send({
