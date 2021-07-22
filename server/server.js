@@ -73,7 +73,7 @@ app.get("/prices", async (req, res) => {
 
   try {
 
-    const stripePrices = await stripe.prices.list({  expand: ['product'], limit: 99, });
+    const stripePrices = await stripe.prices.list({  expand: ['data.product'], limit: 99, });
 
     res.status(200).json(stripePrices.data)
 
