@@ -16,7 +16,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
 
 
 
-app.use(express.static(process.env.STATIC_DIR));
+app.use(express.static('https://naturistic-dz.herokuapp.com/''));
 //  app.use(express.urlencoded({extended : false}));
 app.use(
   express.json({
