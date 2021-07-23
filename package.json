@@ -1,5 +1,5 @@
 {
-  "name": "Naturistic Nodejs Server",
+  "name": "naturistic nodejs server",
   "version": "1.0.0",
   "description": "Accept payments with Stripe Checkout",
   "main": "index.js",
