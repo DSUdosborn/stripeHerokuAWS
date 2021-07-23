@@ -32,7 +32,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  const path = resolve(serverURL + 'index.html');
+  const path = resolve('index.html');
   res.sendFile(path);
 });
 
