@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const { resolve } = require('path');
 // Copy the .env.example in the root into a .env file in this folder
-require('dotenv').config({ path: './.env' });
+//require('dotenv').config({ path: './.env' });
 
+const serverURL = 'https://naturistic-dz.herokuapp.com/'
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
@@ -16,7 +17,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
 
 
 
-app.use(express.static('https://naturistic-dz.herokuapp.com/''));
+app.use(express.static(serverURL));
 //  app.use(express.urlencoded({extended : false}));
 app.use(
   express.json({
@@ -45,15 +46,7 @@ app.get('/cancelled', (req, res) => {
   res.sendFile(path);
 });
 
-app.get('/config', async (req, res) => {
-  const price = await stripe.prices.retrieve(process.env.PRICE);
 
-  res.send({
-    publicKey: process.env.STRIPE_PUBLISHABLE_KEY,
-    unitAmount: price.unit_amount,
-    currency: price.currency,
-  });
-});
 
 app.get('/products', async (req, res) => {
 
@@ -129,7 +122,7 @@ app.get('/checkout-session', async (req, res) => {
 });
 
 app.post('/create-checkout-session', async (req, res) => {
-  const domainURL = process.env.DOMAIN;
+  const domainURL = serverURL;
 
   const { quantity } = req.body;
 
