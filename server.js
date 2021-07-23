@@ -35,6 +35,11 @@ app.get('/', (req, res) => {
   res.sendFile(path);
 });
 
+app.get('/about', (req, res) => {
+  const path = resolve('about.html');
+  res.sendFile(path);
+});
+
 app.get('/config', async (req, res) => {
   const price = await stripe.prices.retrieve(process.env.PRICE);
 
