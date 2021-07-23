@@ -40,6 +40,11 @@ app.get('/about', (req, res) => {
   res.sendFile(path);
 });
 
+app.get('/cancelled', (req, res) => {
+  const path = resolve('cancelled.html');
+  res.sendFile(path);
+});
+
 app.get('/config', async (req, res) => {
   const price = await stripe.prices.retrieve(process.env.PRICE);
 
