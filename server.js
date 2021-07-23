@@ -37,6 +37,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
+  console.log('rendering about page');
   const path = resolve('about.html');
   res.sendFile(path);
 });
